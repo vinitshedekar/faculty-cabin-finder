@@ -8,7 +8,7 @@ export function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold">Faculty Finder</span>
+              <span className="text-2xl font-bold">Faculty Cabin Finder</span>
             </Link>
           </div>
           <div className="flex items-center">
