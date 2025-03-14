@@ -22,9 +22,11 @@ export interface FacultyData {
   Cabin_Detail: string
 }
 
-export async function parseExcelFile(file: ArrayBuffer): Promise<FacultyData[]> {
+// Update the function to accept Buffer or ArrayBuffer
+export async function parseExcelFile(file: Buffer | ArrayBuffer): Promise<FacultyData[]> {
   try {
-    const workbook = XLSX.read(file, { type: "array" })
+    // XLSX.read can work with both Buffer and ArrayBuffer
+    const workbook = XLSX.read(file, { type: "buffer" })
     const sheetName = workbook.SheetNames[0]
     const sheet = workbook.Sheets[sheetName]
     const data = XLSX.utils.sheet_to_json(sheet) as FacultyData[]
@@ -34,4 +36,6 @@ export async function parseExcelFile(file: ArrayBuffer): Promise<FacultyData[]> 
     return []
   }
 }
+
+
 

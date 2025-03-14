@@ -59,5 +59,3 @@ export async function searchFaculty(query: string): Promise<FacultyData | null> 
   }
 }
 
-
-
